@@ -32,9 +32,8 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
-    json = MultiJson.decode(response.body, :symbolize_keys => true)
-    assert_equal first_name, json[:first_name]
-    assert_equal address, json[:address]
+    assert_equal first_name, assigns(:person).first_name
+    assert_equal address, assigns(:person).address
   end
 
   test 'should get callback and handle auth error' do
@@ -58,6 +57,6 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
-    assert_equal 'no response', response.body
+    assert_nil assigns(:person)
   end
 end

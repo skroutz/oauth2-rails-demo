@@ -19,11 +19,12 @@ class AuthorizationController < ApplicationController
                                          {:redirect_uri => authorization_callback_url},
                                          {:mode => :query, :param_name => :oauth_token})
       json = token.get(SkroutzEasy::URL[:address]).parsed
-      render :json => json
+      @person = Person.new(json)
     rescue OAuth2::Error => e
       logger.error e.inspect
-      render :text => 'no response'
     end
+
+    render 'home/index'
   end
 
   private
