@@ -5,10 +5,33 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to "OAuth2 Demo", root_path, :id => 'logo', :class => 'brand' %>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Demo", root_path %></li>
+          <li><%= link_to "Documentation", "http://developers.skroutz.gr/oauth2" %></li>
+          <li><%= link_to "Developers Blog", "http://developers.skroutz.gr/blog" %></li>
+         </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

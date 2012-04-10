@@ -1,2 +1,40 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+  <div class="span12">
+    <h1>OAuth2 Demo</h1>
+    <p>This is a very simple but complete OAuth2 demo using the Skroutz OAuth2 API</p>
+
+    <%= form_tag "/authorization/authorize", :method => :post, :class => "form-horizontal"  do |f| %>
+      <fieldset>
+        <legend>Address</legend>
+        <div class="control-group">
+          <label class="control-label" for="person_first_name">First name</label>
+          <div class="controls">
+            <%= text_field :person, :first_name, :class => "input-xlarge" %>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="person_last_name">Last name</label>
+          <div class="controls">
+            <%= text_field :person, :last_name, :class => "input-xlarge" %>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="person_email">Email</label>
+          <div class="controls">
+            <%= text_field :person, :email, :class => "input-xlarge" %>
+          </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="person_address">Address</label>
+            <div class="controls">
+                <%= text_field :person, :address, :class => "input-xlarge" %>
+            </div>
+        </div>
+        <div class="form-actions">
+          <%= submit_tag "Use SkroutzEasy", :class => "btn btn-primary" %>
+          <%= link_to "Next &raquo;".html_safe, "#", :class => "btn btn-success" %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

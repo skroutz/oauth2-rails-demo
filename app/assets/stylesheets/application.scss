@@ -14,4 +14,19 @@
 
 @import "bootstrap";
 
+body {
+  padding-top: 60px;
+}
+
+.navbar .nav > li > a:hover {
+  background-color: #333333;
+}
+
+#logo {
+  padding-left: 100px;
+  display: block;
+  background: url('logo_light_90x30.png') no-repeat left -4px;
+  text-transform: lowercase;
+}
+
 @import "bootstrap-responsive";
