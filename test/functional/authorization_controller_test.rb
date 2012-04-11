@@ -32,6 +32,7 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
+    assert flash.key?(:success)
     assert_equal first_name, assigns(:json)[:first_name]
     assert_equal address, assigns(:json)[:address]
     assert_equal first_name, assigns(:person).first_name
@@ -59,6 +60,7 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
+    assert flash.key?(:error_block)
     assert_nil assigns(:json)
     assert_nil assigns(:person)
   end

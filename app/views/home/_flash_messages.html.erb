@@ -1,0 +1,36 @@
+<div id="flash-messages">
+  <% if flash[:warning].present? %>
+    <div class="alert">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= flash[:warning] %>
+    </div>
+  <% end %>
+
+  <% if flash[:error].present? %>
+    <div class="alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+
+  <% if flash[:error_block].present? %>
+    <div class="alert alert-block alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= flash[:error_block] %>
+    </div>
+  <% end %>
+
+  <% if flash[:success].present? %>
+    <div class="alert alert-success">
+      <a class="close" data-dismiss="alert">×</a>
+      <%= flash[:success] %>
+    </div>
+  <% end %>
+
+  <% if flash[:notice].present? %>
+    <div class="alert alert-info">
+      <a class="close" data-dismiss="alter">×</a>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+</div>

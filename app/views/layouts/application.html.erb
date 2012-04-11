@@ -30,6 +30,10 @@
 </div>
 
 <div class="container">
+  <% if flash.present? %>
+  <%= render "home/flash_messages" %>
+  <% end %>
+
   <%= yield %>
 </div>
 

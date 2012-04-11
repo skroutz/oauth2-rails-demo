@@ -20,8 +20,10 @@ class AuthorizationController < ApplicationController
                                          {:mode => :query, :param_name => :oauth_token})
       @json = token.get(SkroutzEasy::URL[:address]).parsed
       @person = Person.new(@json)
+
+      flash.now[:success] = 'Success!'
     rescue OAuth2::Error => e
-      logger.error e.inspect
+      flash.now[:error_block] = e.description
     end
 
     render 'home/index'
