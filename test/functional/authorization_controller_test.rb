@@ -32,6 +32,8 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
+    assert_equal first_name, assigns(:json)[:first_name]
+    assert_equal address, assigns(:json)[:address]
     assert_equal first_name, assigns(:person).first_name
     assert_equal address, assigns(:person).address
   end
@@ -57,6 +59,7 @@ class AuthorizationControllerTest < ActionController::TestCase
 
     # Then
     assert_response :success
+    assert_nil assigns(:json)
     assert_nil assigns(:person)
   end
 end

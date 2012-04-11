@@ -61,3 +61,12 @@
   </div>
   <% end %>
 </div>
+
+<% if @json %>
+<div class="row">
+  <div class="span12">
+    <h3>Response JSON</h3>
+    <%= render :partial => "home/json", :locals => {:json => @json} %>
+  </div>
+</div>
+<% end %>

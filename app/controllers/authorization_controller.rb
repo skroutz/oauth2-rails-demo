@@ -18,8 +18,8 @@ class AuthorizationController < ApplicationController
       token = client.auth_code.get_token(params[:code],
                                          {:redirect_uri => authorization_callback_url},
                                          {:mode => :query, :param_name => :oauth_token})
-      json = token.get(SkroutzEasy::URL[:address]).parsed
-      @person = Person.new(json)
+      @json = token.get(SkroutzEasy::URL[:address]).parsed
+      @person = Person.new(@json)
     rescue OAuth2::Error => e
       logger.error e.inspect
     end

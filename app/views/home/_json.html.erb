@@ -1,0 +1,9 @@
+<pre>
+  <code>
+  {
+    <% json.each_with_index do |(key, value), index| %>
+      <%= "\"#{key}\": \"#{value}\"" %><%= "," unless json.size == index + 1 %>
+    <% end %>
+  }
+  </code>
+</pre>
