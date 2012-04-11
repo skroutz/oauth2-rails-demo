@@ -1,5 +1,5 @@
-<pre>
-  <code>
+<pre class="prettyprint">
+  <code class="language-js">
   {
     <% json.each_with_index do |(key, value), index| %>
       <%= "\"#{key}\": \"#{value}\"" %><%= "," unless json.size == index + 1 %>
