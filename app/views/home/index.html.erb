@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span12">
+  <div class="span<%= (SkroutzEasy::KEY.blank? or SkroutzEasy::SECRET.blank?) ? "8" : "12" %>">
     <h1>OAuth2 Demo</h1>
     <p>This is a very simple but complete OAuth2 demo using the Skroutz OAuth2 API</p>
 
@@ -37,4 +37,27 @@
       </fieldset>
     <% end %>
   </div>
+
+  <% if SkroutzEasy::KEY.blank? or SkroutzEasy::SECRET.blank? %>
+  <div class="span4">
+    <div id="keys-info" class="alert alert-block alert-info">
+      <h2 class="alert-heading">Info</h2>
+
+      <div>
+        In order to use the demo you must have valid keys:
+        <ul>
+          <li>client_id</li>
+          <li>client_secret</li>
+        </ul>
+      </div>
+
+      <p>
+        Get the keys and add them to:
+        <code>config/initializers/skroutz_easy.rb</code>
+      </p>
+
+      <%= link_to "Get OAuth2 keys &raquo;".html_safe, "http://www.skroutz.gr/oauth2/clients/new", :class => 'btn btn-info' %>
+    </div>
+  </div>
+  <% end %>
 </div>
