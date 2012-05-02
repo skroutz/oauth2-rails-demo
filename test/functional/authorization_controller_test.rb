@@ -48,7 +48,7 @@ class AuthorizationControllerTest < ActionController::TestCase
     # Mocks
     oauth_client = mock('oauth_client')
     auth_code = mock('auth_code')
-    oauth_response = mock('oauth_response', :error= => nil, :parsed => [])
+    oauth_response = mock('oauth_response', :body => nil, :error= => nil, :parsed => [])
 
     # Given - Expectations
     oauth_client.expects(:auth_code).returns(auth_code)
