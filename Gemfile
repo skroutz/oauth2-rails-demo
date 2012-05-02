@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'oauth2', '~> 0.5.2'
+gem 'oauth2', '~> 0.7.1'
 gem 'json'
 
 gem 'mocha', :require => false
